@@ -14,6 +14,7 @@ import { Header } from "../components";
 
 const Employees = () => {
   const editing = { allowDeleting: true, allowEditing: true };
+  const toolbarOptions = ["Search"];
 
   return (
     <div className="p-2 m-2 bg-white md:m-10 md:p-10 rounded-3xl">
@@ -22,8 +23,9 @@ const Employees = () => {
         dataSource={employeesData}
         allowPaging
         allowSorting
-        toolbar={["Search"]}
+        toolbar={toolbarOptions}
         editSettings={editing}
+        pageSettings={{ pageCount: 5 }}
         width="auto"
       >
         <ColumnsDirective>

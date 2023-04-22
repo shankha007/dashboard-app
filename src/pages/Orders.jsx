@@ -28,6 +28,8 @@ const Orders = () => {
         dataSource={ordersData}
         allowPaging
         allowSorting
+        allowExcelExport
+        allowPdfExport
         contextMenuItems={contextMenuItems}
         editSettings={editing}
       >

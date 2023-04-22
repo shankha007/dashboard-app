@@ -16,15 +16,22 @@ import { customersData, customersGrid } from "../data/dummy";
 import { Header } from "../components";
 
 const Customers = () => {
+  const selectionsettings = { persistSelection: true };
+  const toolbarOptions = ["Delete"];
+  const editing = { allowDeleting: true, allowEditing: true };
+
   return (
     <div className="p-2 m-2 bg-white md:m-10 md:p-10 rounded-3xl">
       <Header title="Customers" category="Page" />
       <GridComponent
         dataSource={customersData}
         allowPaging
+        pageSettings={{ pageCount: 5 }}
+        enableHover={false}
         allowSorting
-        toolbar={["Delete"]}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
+        selectionSettings={selectionsettings}
+        toolbar={toolbarOptions}
+        editSettings={editing}
         width="auto"
       >
         <ColumnsDirective>
